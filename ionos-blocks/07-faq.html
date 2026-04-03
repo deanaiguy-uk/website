@@ -1,0 +1,57 @@
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+.aig-faq *{margin:0;padding:0;box-sizing:border-box}
+.aig-faq{font-family:'Nunito Sans',sans-serif;padding:80px 20px;background:#fff;color:#1e293b}
+.aig-faq .inner{max-width:800px;margin:0 auto;text-align:center}
+.aig-faq .badge{display:inline-flex;background:rgba(254,205,3,0.1);border:1px solid rgba(254,205,3,0.2);padding:6px 16px;border-radius:50px;font-size:.8rem;font-weight:600;color:#0a1a8a;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
+.aig-faq h2{font-family:'Nunito',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:#0a1a8a;margin-bottom:48px}
+.aig-faq h2 span{color:#29c1ef}
+.aig-faq .list{text-align:left}
+.aig-faq .item{border-bottom:1px solid #e2e8f0;padding:20px 0}
+.aig-faq .q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:1.05rem;color:#0a1a8a;transition:color .3s}
+.aig-faq .q:hover{color:#29c1ef}
+.aig-faq .q .arrow{transition:transform .3s;font-size:1.2rem}
+.aig-faq .q.active .arrow{transform:rotate(180deg)}
+.aig-faq .a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;color:#4d5656;line-height:1.7}
+.aig-faq .a.open{max-height:300px;padding-top:12px}
+</style>
+
+<div class="aig-faq">
+  <div class="inner">
+    <div class="badge">FAQ</div>
+    <h2>Common <span>Questions</span></h2>
+    <div class="list">
+
+      <div class="item">
+        <div class="q" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">Do I need any technical knowledge?<span class="arrow">&#9660;</span></div>
+        <div class="a">Not at all. Every session is designed for non-technical people. We meet you where you are and build confidence with practical, hands-on exercises &mdash; not theory lectures.</div>
+      </div>
+
+      <div class="item">
+        <div class="q" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">Can you come to our office or school?<span class="arrow">&#9660;</span></div>
+        <div class="a">Yes! All workshops and training sessions can be delivered on-site at your location in Sheffield and South Yorkshire. Remote options are also available for teams across the UK.</div>
+      </div>
+
+      <div class="item">
+        <div class="q" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">What AI tools do you use and recommend?<span class="arrow">&#9660;</span></div>
+        <div class="a">We're completely tool-agnostic. We recommend what works best for your situation &mdash; whether that's ChatGPT, Claude, Copilot, Gemini, or specialised tools for your industry.</div>
+      </div>
+
+      <div class="item">
+        <div class="q" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">Is there support after training?<span class="arrow">&#9660;</span></div>
+        <div class="a">Yes. All packages include follow-up support. The AI Kickstart includes 30 days of email support. Retainer clients get ongoing, dedicated support. We don't just train and disappear.</div>
+      </div>
+
+      <div class="item">
+        <div class="q" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">How do I know which service is right for me?<span class="arrow">&#9660;</span></div>
+        <div class="a">The easiest way is to book a free strategy call &mdash; 15 minutes, no obligation, no pitch. Or take our free AI Audit tool for an instant assessment of where AI can help most.</div>
+      </div>
+
+      <div class="item">
+        <div class="q" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">Are your school workshops safeguarding compliant?<span class="arrow">&#9660;</span></div>
+        <div class="a">Absolutely. Safeguarding and data protection are non-negotiable. All school-facing work follows current DfE guidance and we hold an enhanced DBS check. We provide policy templates and frameworks as standard.</div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+.aig-contact *{margin:0;padding:0;box-sizing:border-box}
+.aig-contact{font-family:'Nunito Sans',sans-serif;padding:80px 20px;background:linear-gradient(180deg,#0a1a8a,#1228a0);color:#fff}
+.aig-contact .inner{max-width:1200px;margin:0 auto;text-align:center}
+.aig-contact .badge{display:inline-flex;background:rgba(254,205,3,0.1);border:1px solid rgba(254,205,3,0.2);padding:6px 16px;border-radius:50px;font-size:.8rem;font-weight:600;color:#fecd03;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
+.aig-contact h2{font-family:'Nunito',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:16px}
+.aig-contact h2 span{color:#fecd03}
+.aig-contact .subtitle{font-size:1.1rem;color:#8899a6;max-width:600px;margin:0 auto 48px}
+.aig-contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;text-align:left}
+.aig-contact .info p{color:#8899a6;line-height:1.8;margin-bottom:24px;font-size:1.05rem}
+.aig-contact .detail{display:flex;align-items:center;gap:12px;margin-bottom:16px;color:#d0d8e0}
+.aig-contact .detail .icon{color:#fecd03;font-size:1.2rem}
+.aig-contact .cta-box{margin-top:32px;padding:24px;background:rgba(254,205,3,0.1);border-radius:12px;border:1px solid rgba(254,205,3,0.2)}
+.aig-contact .cta-box strong{color:#fecd03}
+.aig-contact .cta-box p{color:#d0d8e0;margin-top:8px;font-size:.9rem}
+.aig-contact .cta-box a{display:inline-block;margin-top:12px;background:linear-gradient(135deg,#1a3ab0,#29c1ef);color:#fff;padding:12px 24px;border-radius:50px;font-weight:700;font-size:.85rem;text-decoration:none;transition:all .3s}
+.aig-contact .cta-box a:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(41,193,239,0.3)}
+.aig-contact form{display:flex;flex-direction:column;gap:16px}
+.aig-contact label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:#d0d8e0}
+.aig-contact input,.aig-contact select,.aig-contact textarea{width:100%;padding:14px 18px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:12px;color:#fff;font-size:.95rem;font-family:inherit;transition:border-color .3s}
+.aig-contact input:focus,.aig-contact select:focus,.aig-contact textarea:focus{outline:none;border-color:#29c1ef}
+.aig-contact textarea{min-height:120px;resize:vertical}
+.aig-contact select option{background:#0a1a8a;color:#fff}
+.aig-contact .submit{background:linear-gradient(135deg,#1a3ab0,#29c1ef);color:#fff;padding:16px;border-radius:50px;font-weight:700;font-size:1rem;border:none;cursor:pointer;transition:all .3s;width:100%}
+.aig-contact .submit:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(41,193,239,0.3)}
+@media(max-width:768px){.aig-contact .grid{grid-template-columns:1fr}}
+</style>
+
+<div class="aig-contact">
+  <div class="inner">
+    <div class="badge">Get In Touch</div>
+    <h2>Let's Talk About <span>Your AI Journey</span></h2>
+    <p class="subtitle">Whether you're ready to book or just want to explore your options, we're here to help.</p>
+    <div class="grid">
+      <div class="info">
+        <p>At AI Guy Solutions, we believe in the power of artificial intelligence to transform businesses and enhance learning experiences. Whether your interest lies in our innovative services designed for schools or our bespoke offerings for businesses, we're ready to help.</p>
+        <div class="detail"><span class="icon">&#128205;</span> Sheffield, South Yorkshire</div>
+        <div class="detail"><span class="icon">&#128231;</span> hello@aiguysolutions.co.uk</div>
+        <div class="detail"><span class="icon">&#127760;</span> www.aiguysolutions.co.uk</div>
+        <div class="cta-box">
+          <strong>Prefer to talk?</strong>
+          <p>Book a free 15-minute call. No pressure, no pitch &mdash; just honest advice about whether AI is right for you right now.</p>
+          <a href="https://calendly.com/dean-aiguy/intro-call" target="_blank">Book Free Call</a>
+        </div>
+      </div>
+      <div>
+        <form>
+          <div><label>Name *</label><input type="text" required placeholder="Your name"></div>
+          <div><label>Email *</label><input type="email" required placeholder="your@email.com"></div>
+          <div>
+            <label>I'm interested in...</label>
+            <select>
+              <option value="">Select an option</option>
+              <option>Business AI Training</option>
+              <option>School Workshop</option>
+              <option>1:1 AI Coaching</option>
+              <option>AI Agency Retainer</option>
+              <option>Free Strategy Call</option>
+              <option>Teaching Resources</option>
+              <option>Something Else</option>
+            </select>
+          </div>
+          <div><label>Message</label><textarea placeholder="Tell us about your needs..."></textarea></div>
+          <button type="submit" class="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

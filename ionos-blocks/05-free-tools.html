@@ -1,0 +1,60 @@
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+.aig-tools *{margin:0;padding:0;box-sizing:border-box}
+.aig-tools{font-family:'Nunito Sans',sans-serif;padding:80px 20px;background:linear-gradient(135deg,#1228a0,#0a1a8a,#1a2aaa);color:#fff;position:relative;overflow:hidden}
+.aig-tools::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(41,193,239,0.08),transparent 70%)}
+.aig-tools .inner{max-width:1200px;margin:0 auto;text-align:center;position:relative;z-index:2}
+.aig-tools .badge{display:inline-flex;background:rgba(254,205,3,0.1);border:1px solid rgba(254,205,3,0.2);padding:6px 16px;border-radius:50px;font-size:.8rem;font-weight:600;color:#fecd03;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
+.aig-tools h2{font-family:'Nunito',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:16px}
+.aig-tools h2 span{color:#fecd03}
+.aig-tools .subtitle{font-size:1.1rem;color:#8899a6;max-width:600px;margin:0 auto 48px}
+.aig-tools .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+.aig-tools .card{background:rgba(255,255,255,0.03);border:2px solid rgba(41,193,239,0.2);border-radius:20px;padding:40px;transition:all .4s}
+.aig-tools .card:hover{border-color:#fecd03;box-shadow:0 0 50px rgba(254,205,3,0.1);transform:translateY(-6px)}
+.aig-tools .free{display:inline-block;background:#fecd03;color:#0a1a8a;padding:4px 16px;border-radius:50px;font-size:.8rem;font-weight:800;margin-bottom:16px}
+.aig-tools .card h3{font-family:'Nunito',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:12px}
+.aig-tools .card p{color:#8899a6;margin-bottom:24px;line-height:1.7}
+.aig-tools ul{list-style:none;text-align:left;margin-top:20px;margin-bottom:24px}
+.aig-tools ul li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:#d0d8e0;font-size:.9rem;display:flex;align-items:flex-start;gap:10px}
+.aig-tools ul li::before{content:'\2713';color:#fecd03;font-weight:700;flex-shrink:0}
+.aig-tools .btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1a3ab0,#29c1ef);color:#fff;padding:16px 32px;border-radius:50px;font-weight:700;font-size:1rem;text-decoration:none;transition:all .3s;border:none;cursor:pointer}
+.aig-tools .btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(41,193,239,0.3)}
+@media(max-width:768px){.aig-tools .grid{grid-template-columns:1fr}}
+</style>
+
+<div class="aig-tools">
+  <div class="inner">
+    <div class="badge">Free Tools</div>
+    <h2>AI Audit &amp; <span>Risk Assessment</span></h2>
+    <p class="subtitle">Not sure where to start? Use our free tools to quickly find out where AI can help you and where to be careful.</p>
+    <div class="grid">
+
+      <div class="card">
+        <div class="free">FREE</div>
+        <h3>AI Audit Tool</h3>
+        <p>Answer a short set of questions about your business or school and get an instant breakdown of where AI can save you time, reduce costs, and improve output. Takes under five minutes.</p>
+        <ul>
+          <li>Instant results, no sign-up needed</li>
+          <li>Identifies your highest-value opportunities</li>
+          <li>Tailored to your organisation type</li>
+          <li>Optional written report available</li>
+        </ul>
+        <a href="https://www.aiguysolutions.co.uk/" target="_blank" class="btn">Take the Free Audit</a>
+      </div>
+
+      <div class="card">
+        <div class="free">FREE</div>
+        <h3>AI Risk Assessment</h3>
+        <p>Understand the risks before you commit to any AI tools. Covers data privacy, bias, compliance, and operational risk so you can adopt AI safely and responsibly from day one.</p>
+        <ul>
+          <li>Covers GDPR and data privacy risks</li>
+          <li>Identifies bias and fairness concerns</li>
+          <li>Operational and reputational risk flags</li>
+          <li>Optional formal written assessment</li>
+        </ul>
+        <a href="https://www.aiguysolutions.co.uk/" target="_blank" class="btn">Start Risk Assessment</a>
+      </div>
+
+    </div>
+  </div>
+</div>

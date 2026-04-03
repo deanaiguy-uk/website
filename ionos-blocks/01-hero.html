@@ -1,0 +1,45 @@
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+.aig-hero *{margin:0;padding:0;box-sizing:border-box}
+.aig-hero{font-family:'Nunito Sans',sans-serif;min-height:90vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:80px 20px;background:linear-gradient(135deg,#0a1a8a 0%,#1a3ab0 50%,#0a1a8a 100%)}
+.aig-hero .grid-bg{position:absolute;inset:0;background-image:radial-gradient(rgba(41,193,239,0.15) 1px,transparent 1px);background-size:40px 40px;animation:aigGrid 20s linear infinite}
+@keyframes aigGrid{0%{transform:translate(0,0)}100%{transform:translate(40px,40px)}}
+.aig-hero .glow{position:absolute;width:500px;height:500px;border-radius:50%;filter:blur(120px);opacity:.15}
+.aig-hero .glow-1{background:#29c1ef;top:-200px;right:-100px}
+.aig-hero .glow-2{background:#fecd03;bottom:-200px;left:-100px}
+.aig-hero .content{position:relative;z-index:2;max-width:800px;margin:0 auto}
+.aig-hero .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(254,205,3,0.15);border:1px solid rgba(254,205,3,0.3);padding:8px 20px;border-radius:50px;font-size:.85rem;font-weight:600;color:#fecd03;margin-bottom:24px}
+.aig-hero h1{font-family:'Nunito',sans-serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;line-height:1.1;margin-bottom:24px;color:#fff}
+.aig-hero h1 span{background:linear-gradient(135deg,#1a3ab0,#29c1ef);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.aig-hero p{font-size:1.15rem;color:#d0d8e0;max-width:600px;margin-bottom:40px;line-height:1.7}
+.aig-hero .buttons{display:flex;gap:16px;flex-wrap:wrap}
+.aig-hero .btn-main{background:linear-gradient(135deg,#1a3ab0,#29c1ef);color:#fff;padding:16px 32px;border-radius:50px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;border:none;cursor:pointer}
+.aig-hero .btn-main:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(41,193,239,0.3)}
+.aig-hero .btn-ghost{background:transparent;color:#fff;padding:16px 32px;border-radius:50px;font-weight:700;font-size:1rem;border:2px solid #8899a6;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s}
+.aig-hero .btn-ghost:hover{border-color:#29c1ef;color:#29c1ef;transform:translateY(-3px)}
+.aig-hero .stats{margin-top:60px;padding-top:40px;border-top:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;gap:40px;flex-wrap:wrap}
+.aig-hero .stat{text-align:center}
+.aig-hero .stat .num{font-family:'Nunito',sans-serif;font-size:2rem;font-weight:800;color:#fecd03}
+.aig-hero .stat .label{font-size:.8rem;color:#8899a6;margin-top:4px}
+@media(max-width:600px){.aig-hero .stats{flex-direction:column;gap:20px}.aig-hero h1{font-size:2rem}}
+</style>
+
+<div class="aig-hero">
+  <div class="grid-bg"></div>
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+  <div class="content">
+    <div class="badge">Sheffield's Practical AI Partner</div>
+    <h1>Make AI Work For Your Business.<br><span>Not the Other Way Around.</span></h1>
+    <p>Practical AI training and strategy for Sheffield businesses and schools. No jargon. No hype. Just real tools, real skills, and real results from day one.</p>
+    <div class="buttons">
+      <a href="#" class="btn-main">Take the Free AI Audit</a>
+      <a href="https://calendly.com/dean-aiguy/intro-call" target="_blank" class="btn-ghost">Book a Free Call</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">87%</div><div class="label">of employers now expect<br>AI literacy from candidates</div></div>
+      <div class="stat"><div class="num">5hrs+</div><div class="label">average time saved<br>per employee per week</div></div>
+      <div class="stat"><div class="num">100%</div><div class="label">practical, hands-on<br>no theory lectures</div></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,118 @@
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+.aig-pricing *{margin:0;padding:0;box-sizing:border-box}
+.aig-pricing{font-family:'Nunito Sans',sans-serif;padding:80px 20px;background:linear-gradient(180deg,#0a1a8a,#1228a0,#0a1a8a);color:#fff}
+.aig-pricing .inner{max-width:1200px;margin:0 auto;text-align:center}
+.aig-pricing .badge{display:inline-flex;background:rgba(254,205,3,0.1);border:1px solid rgba(254,205,3,0.2);padding:6px 16px;border-radius:50px;font-size:.8rem;font-weight:600;color:#fecd03;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
+.aig-pricing h2{font-family:'Nunito',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:16px}
+.aig-pricing h2 span{color:#fecd03}
+.aig-pricing .subtitle{font-size:1.1rem;color:#8899a6;max-width:600px;margin:0 auto 48px}
+.aig-pricing .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;text-align:left}
+.aig-pricing .card{background:#1228a0;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:36px;display:flex;flex-direction:column;transition:all .4s;position:relative}
+.aig-pricing .card.featured{border-color:#29c1ef;box-shadow:0 0 40px rgba(41,193,239,0.15)}
+.aig-pricing .card:hover{transform:translateY(-6px);box-shadow:0 10px 40px rgba(0,0,0,0.2)}
+.aig-pricing .pop{position:absolute;top:-1px;right:24px;background:linear-gradient(135deg,#1a3ab0,#29c1ef);color:#fff;padding:6px 16px;border-radius:0 0 8px 8px;font-size:.75rem;font-weight:700;text-transform:uppercase}
+.aig-pricing .card-icon{width:64px;height:64px;border-radius:16px;overflow:hidden;margin-bottom:16px}
+.aig-pricing .card-icon img{width:100%;height:100%;object-fit:cover;border-radius:16px}
+.aig-pricing .price{font-family:'Nunito',sans-serif;font-size:2.5rem;font-weight:900;margin-bottom:4px}
+.aig-pricing .price .period{font-size:1rem;font-weight:400;color:#8899a6}
+.aig-pricing .name{font-size:1.1rem;font-weight:600;color:#fecd03;margin-bottom:12px}
+.aig-pricing .desc{color:#8899a6;font-size:.95rem;margin-bottom:24px;line-height:1.6;min-height:72px}
+.aig-pricing ul{list-style:none;margin-bottom:32px;flex-grow:1}
+.aig-pricing ul li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:#d0d8e0;font-size:.9rem;display:flex;align-items:flex-start;gap:10px}
+.aig-pricing ul li::before{content:'\2713';color:#fecd03;font-weight:700;flex-shrink:0}
+.aig-pricing .btn{display:block;text-align:center;padding:14px;border-radius:50px;font-weight:700;font-size:.95rem;transition:all .3s;cursor:pointer;text-decoration:none;width:100%}
+.aig-pricing .btn-fill{background:linear-gradient(135deg,#1a3ab0,#29c1ef);color:#fff;border:none}
+.aig-pricing .btn-fill:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(41,193,239,0.3)}
+.aig-pricing .btn-line{background:transparent;color:#fff;border:2px solid #8899a6}
+.aig-pricing .btn-line:hover{border-color:#29c1ef;color:#29c1ef}
+.aig-pricing .enterprise{text-align:center;margin-top:48px;padding:32px;background:rgba(255,255,255,0.03);border-radius:20px;border:1px solid rgba(255,255,255,0.08)}
+.aig-pricing .enterprise h3{font-family:'Nunito',sans-serif;font-size:1.3rem;margin-bottom:8px}
+.aig-pricing .enterprise p{color:#8899a6;margin-bottom:16px}
+.aig-pricing .enterprise a{display:inline-block;padding:12px 28px;border-radius:50px;font-size:.9rem;font-weight:700;background:transparent;color:#fff;border:2px solid #8899a6;text-decoration:none;transition:all .3s}
+.aig-pricing .enterprise a:hover{border-color:#29c1ef;color:#29c1ef}
+@media(max-width:768px){.aig-pricing .grid{grid-template-columns:1fr}}
+</style>
+
+<div class="aig-pricing">
+  <div class="inner">
+    <div class="badge">For Businesses</div>
+    <h2>Practical AI Solutions <span>That Pay for Themselves</span></h2>
+    <p class="subtitle">Start with a workshop, scale into ongoing support, or let us handle it all. Every package includes real, measurable outcomes.</p>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-icon"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=128&h=128&fit=crop" alt="Coaching"></div>
+        <div class="price">&pound;99<span class="period"> / session</span></div>
+        <div class="name">1:1 AI Coaching</div>
+        <div class="desc">Bespoke coaching tailored to your role, your tools, your goals. No generic slides, no wasted time.</div>
+        <ul>
+          <li>Fully bespoke to your job and workflow</li>
+          <li>Learn AI tools relevant to you</li>
+          <li>Save hours every week from session one</li>
+          <li>Follow-up resources and prompt library</li>
+          <li>Ongoing support between sessions</li>
+          <li>Remote or in-person &mdash; your choice</li>
+        </ul>
+        <a href="https://calendly.com/dean-aiguy/intro-call" target="_blank" class="btn btn-line">Book a Session</a>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=128&h=128&fit=crop" alt="Team training"></div>
+        <div class="price">&pound;599<span class="period"> one-off</span></div>
+        <div class="name">AI Kickstart</div>
+        <div class="desc">A structured half-day programme that gets your whole team using AI effectively &mdash; not just talking about it.</div>
+        <ul>
+          <li>Half-day team training session</li>
+          <li>AI audit of your current workflows</li>
+          <li>Identify your top 5 quick wins</li>
+          <li>Hands-on tool training (not theory)</li>
+          <li>Custom prompt library for your business</li>
+          <li>30-day follow-up email support</li>
+        </ul>
+        <a href="https://calendly.com/dean-aiguy/intro-call" target="_blank" class="btn btn-fill">Get Started</a>
+      </div>
+
+      <div class="card featured">
+        <span class="pop">Most Popular</span>
+        <div class="card-icon"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=128&h=128&fit=crop" alt="Agency retainer"></div>
+        <div class="price">&pound;997<span class="period"> / month</span></div>
+        <div class="name">AI Agency Retainer</div>
+        <div class="desc">Your AI department, without the headcount. Strategic support, creative output, and ongoing optimisation every month.</div>
+        <ul>
+          <li>Unlimited AI productivity audits</li>
+          <li>Marketing plans and campaign strategy</li>
+          <li>AI-generated designs and creative assets</li>
+          <li>Monthly competitor analysis reports</li>
+          <li>Ongoing tool optimisation and training</li>
+          <li>Priority access and dedicated support</li>
+          <li>Monthly strategy call included</li>
+        </ul>
+        <a href="https://calendly.com/dean-aiguy/intro-call" target="_blank" class="btn btn-fill">Book a Discovery Call</a>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=128&h=128&fit=crop" alt="Strategy call"></div>
+        <div class="price" style="font-size:2rem">Free<span class="period"> strategy call</span></div>
+        <div class="name">Not Sure Where to Start?</div>
+        <div class="desc">Book a free 15-minute call and we'll tell you honestly which option &mdash; if any &mdash; is right for you. No pressure, no pitch.</div>
+        <ul>
+          <li>Understand your current AI readiness</li>
+          <li>Identify your biggest opportunities</li>
+          <li>Get a clear, honest recommendation</li>
+          <li>Walk away with value regardless</li>
+          <li>No obligation to book anything</li>
+          <li>30-minute option available if needed</li>
+        </ul>
+        <a href="https://calendly.com/dean-aiguy/intro-call" target="_blank" class="btn btn-line">Book Free Call</a>
+      </div>
+
+    </div>
+
+    <div class="enterprise">
+      <h3>Need something bigger?</h3>
+      <p>Our <strong>AI Discovery Workshop</strong> (&pound;1,800&ndash;&pound;3,000) and <strong>Digital Transformation Programme</strong> (&pound;4,000&ndash;&pound;8,000) are designed for larger organisations.</p>
+      <a href="https://calendly.com/dean-aiguy/intro-call" target="_blank">Enquire About Enterprise Packages</a>
+    </div>
+  </div>
+</div>
