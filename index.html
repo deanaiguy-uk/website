@@ -101,20 +101,21 @@ section{padding:120px 0}
 .who-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient-cta);transform:scaleX(0);transition:transform .4s;transform-origin:left}
 .who-card:hover{transform:translateY(-8px);border-color:rgba(6,182,212,0.3);box-shadow:var(--shadow-glow)}
 .who-card:hover::before{transform:scaleX(1)}
-.who-icon{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:20px}
-.who-icon.business{background:rgba(6,182,212,0.15)}
-.who-icon.school{background:rgba(132,204,22,0.15)}
-.who-icon.individual{background:rgba(168,85,247,0.15)}
+.who-icon{width:100%;height:200px;border-radius:16px;overflow:hidden;margin-bottom:20px}
+.who-icon img{width:100%;height:100%;object-fit:cover}
 .who-card h3{font-size:1.4rem;font-weight:700;margin-bottom:12px}
 .who-card p{color:var(--gray-400);line-height:1.7}
 
 /* PRICING CARDS */
-.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin-top:40px}
+.pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:40px}
 .price-card{background:var(--navy-light);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-lg);padding:36px;transition:all .4s;position:relative;display:flex;flex-direction:column}
+@media(max-width:768px){.pricing-grid{grid-template-columns:1fr}}
 .price-card.featured{border-color:var(--cyan);box-shadow:0 0 40px rgba(6,182,212,0.15)}
 .price-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
 .popular-badge{position:absolute;top:-1px;right:24px;background:var(--gradient-cta);color:var(--navy);padding:6px 16px;border-radius:0 0 8px 8px;font-size:.75rem;font-weight:700;text-transform:uppercase}
-.price-card .icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:16px}
+.price-card .icon{width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;overflow:hidden}
+.price-card .icon img{width:100%;height:100%;object-fit:cover;border-radius:16px}
+.price-card .desc{min-height:72px}
 .price-amount{font-size:2.5rem;font-weight:900;margin-bottom:4px}
 .price-amount .currency{font-size:1.5rem;vertical-align:super}
 .price-amount .period{font-size:1rem;font-weight:400;color:var(--gray-400)}
@@ -131,10 +132,12 @@ section{padding:120px 0}
 
 /* SCHOOLS SECTION */
 .schools-bg{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-light) 50%,var(--navy) 100%)}
-.workshop-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-top:40px}
+.workshop-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:40px}
+@media(max-width:768px){.workshop-cards{grid-template-columns:1fr}}
 .workshop-card{background:var(--navy);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-lg);overflow:hidden;transition:all .4s}
 .workshop-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:rgba(132,204,22,0.3)}
-.workshop-header{background:linear-gradient(135deg,var(--blue),var(--cyan));padding:24px;text-align:center;font-size:2rem}
+.workshop-header{background:linear-gradient(135deg,var(--blue),var(--cyan));padding:0;text-align:center;font-size:2rem;height:180px;overflow:hidden}
+.workshop-header img{width:100%;height:100%;object-fit:cover}
 .workshop-body{padding:28px}
 .workshop-body h3{font-size:1.2rem;font-weight:700;margin-bottom:8px}
 .workshop-body .desc{color:var(--gray-400);font-size:.9rem;margin-bottom:16px}
@@ -298,19 +301,19 @@ section{padding:60px 0}
 </div>
 <div class="who-grid">
 <div class="who-card fade-in">
-<div class="who-icon business">&#127970;</div>
+<div class="who-icon"><img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop" alt="Business team using AI"></div>
 <h3>For Businesses</h3>
 <p>Cut through the AI noise. We show your team exactly which tools save time and money, with hands-on training they can use from day one. From half-day kickstarts to full agency retainers.</p>
 <a href="#pricing" style="display:inline-block;margin-top:16px;color:var(--cyan);font-weight:600;font-size:.9rem">View business packages &rarr;</a>
 </div>
 <div class="who-card fade-in">
-<div class="who-icon school">&#127979;</div>
+<div class="who-icon"><img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&h=400&fit=crop" alt="Teachers in a classroom"></div>
 <h3>For Schools</h3>
 <p>Practical AI training for teachers, leaders, and students with safeguarding built in. CPD workshops, student sessions, parent evenings, and ready-to-use teaching resources.</p>
 <a href="#schools" style="display:inline-block;margin-top:16px;color:var(--cyan);font-weight:600;font-size:.9rem">View school workshops &rarr;</a>
 </div>
 <div class="who-card fade-in">
-<div class="who-icon individual">&#128100;</div>
+<div class="who-icon"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop" alt="Individual AI coaching session"></div>
 <h3>For Individuals</h3>
 <p>1:1 coaching tailored to your role, your tools, and your goals. No generic slides. Learn the AI skills that actually matter for YOUR job and start saving hours every week.</p>
 <a href="#coaching" style="display:inline-block;margin-top:16px;color:var(--cyan);font-weight:600;font-size:.9rem">View 1:1 coaching &rarr;</a>
@@ -330,7 +333,7 @@ section{padding:60px 0}
 <div class="pricing-grid">
 
 <div class="price-card fade-in">
-<div class="icon" style="background:rgba(6,182,212,0.15)">&#127891;</div>
+<div class="icon"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=128&h=128&fit=crop" alt="1:1 Coaching"></div>
 <div class="price-amount">&pound;99<span class="period"> / session</span></div>
 <div class="name">1:1 AI Coaching</div>
 <div class="desc">Bespoke coaching tailored to your role, your tools, your goals. No generic slides, no wasted time.</div>
@@ -346,7 +349,7 @@ section{padding:60px 0}
 </div>
 
 <div class="price-card fade-in">
-<div class="icon" style="background:rgba(132,204,22,0.15)">&#128188;</div>
+<div class="icon"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=128&h=128&fit=crop" alt="Team AI Kickstart"></div>
 <div class="price-amount">&pound;599<span class="period"> one-off</span></div>
 <div class="name">AI Kickstart</div>
 <div class="desc">A structured half-day programme that gets your whole team using AI effectively &mdash; not just talking about it.</div>
@@ -363,7 +366,7 @@ section{padding:60px 0}
 
 <div class="price-card featured fade-in">
 <span class="popular-badge">Most Popular</span>
-<div class="icon" style="background:rgba(6,182,212,0.15)">&#128640;</div>
+<div class="icon"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=128&h=128&fit=crop" alt="AI Agency Retainer"></div>
 <div class="price-amount">&pound;997<span class="period"> / month</span></div>
 <div class="name">AI Agency Retainer</div>
 <div class="desc">Your AI department, without the headcount. Strategic support, creative output, and ongoing optimisation every month.</div>
@@ -380,7 +383,7 @@ section{padding:60px 0}
 </div>
 
 <div class="price-card fade-in">
-<div class="icon" style="background:rgba(168,85,247,0.15)">&#10067;</div>
+<div class="icon"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=128&h=128&fit=crop" alt="Free Strategy Call"></div>
 <div class="price-amount" style="font-size:2rem">Free<span class="period"> strategy call</span></div>
 <div class="name">Not Sure Where to Start?</div>
 <div class="desc">Book a free 15-minute call and we'll tell you honestly which option &mdash; if any &mdash; is right for you. No pressure, no pitch.</div>
@@ -416,7 +419,7 @@ section{padding:60px 0}
 <div class="workshop-cards">
 
 <div class="workshop-card fade-in">
-<div class="workshop-header">&#128737;&#65039;</div>
+<div class="workshop-header"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=360&fit=crop" alt="Safe AI for schools"></div>
 <div class="workshop-body">
 <h3>Safe AI Foundations</h3>
 <div class="desc">A half-day session for teachers and leadership teams who need clear, practical AI guidelines for their school.</div>
@@ -432,7 +435,7 @@ section{padding:60px 0}
 </div>
 
 <div class="workshop-card fade-in">
-<div class="workshop-header" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">&#9997;&#65039;</div>
+<div class="workshop-header"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=360&fit=crop" alt="Teacher training session"></div>
 <div class="workshop-body">
 <h3>Teacher Prompt Training</h3>
 <div class="desc">Hands-on training for teachers who want to use AI to reduce workload, create better resources, and improve lesson planning.</div>
@@ -448,7 +451,7 @@ section{padding:60px 0}
 </div>
 
 <div class="workshop-card fade-in">
-<div class="workshop-header" style="background:linear-gradient(135deg,#ef4444,#8b5cf6)">&#127919;</div>
+<div class="workshop-header"><img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=600&h=360&fit=crop" alt="Students learning AI"></div>
 <div class="workshop-body">
 <h3>Student AI Literacy</h3>
 <div class="desc">Age-appropriate sessions that teach students how to use AI responsibly, critically, and creatively.</div>
@@ -464,7 +467,7 @@ section{padding:60px 0}
 </div>
 
 <div class="workshop-card fade-in">
-<div class="workshop-header" style="background:linear-gradient(135deg,#8b5cf6,#06b6d4)">&#128106;</div>
+<div class="workshop-header"><img src="https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?w=600&h=360&fit=crop" alt="Parents learning about AI"></div>
 <div class="workshop-body">
 <h3>Parent AI Awareness</h3>
 <div class="desc">An evening or weekend session for parents covering what tools children are using, online safety, and supporting learning at home.</div>
@@ -483,9 +486,9 @@ section{padding:60px 0}
 <!-- WHY SCHOOLS TRUST US -->
 <div style="margin-top:60px">
 <div class="why-grid">
-<div class="why-card fade-in"><div class="icon">&#9989;</div><h3>Education Background</h3><p>We work in employability and understand the classroom</p></div>
-<div class="why-card fade-in"><div class="icon">&#128274;</div><h3>Safety First</h3><p>Data protection and safeguarding are non-negotiable</p></div>
-<div class="why-card fade-in"><div class="icon">&#127919;</div><h3>Practical Focus</h3><p>No jargon, no theory &mdash; just what actually works</p></div>
+<div class="why-card fade-in"><div class="icon"><img src="https://images.unsplash.com/photo-1523050854058-8df90110c8f1?w=100&h=100&fit=crop" alt="Education" style="width:60px;height:60px;border-radius:50%;object-fit:cover"></div><h3>Education Background</h3><p>We work in employability and understand the classroom</p></div>
+<div class="why-card fade-in"><div class="icon"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=100&h=100&fit=crop" alt="Security" style="width:60px;height:60px;border-radius:50%;object-fit:cover"></div><h3>Safety First</h3><p>Data protection and safeguarding are non-negotiable</p></div>
+<div class="why-card fade-in"><div class="icon"><img src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=100&h=100&fit=crop" alt="Practical" style="width:60px;height:60px;border-radius:50%;object-fit:cover"></div><h3>Practical Focus</h3><p>No jargon, no theory &mdash; just what actually works</p></div>
 </div>
 </div>
 
