@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Guy Solutions | Practical AI Training &amp; Strategy | Sheffield</title>
+<meta name="description" content="Sheffield-based AI training and consultancy for businesses and schools. Practical workshops, strategy, and ongoing support. No jargon, just results.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--navy:#0a1628;--navy-light:#0f2035;--blue:#1e40af;--blue-light:#2563eb;
+--cyan:#06b6d4;--lime:#84cc16;--lime-dark:#65a30d;--white:#ffffff;
+--gray-100:#f1f5f9;--gray-200:#e2e8f0;--gray-300:#cbd5e1;
+--gray-400:#94a3b8;--gray-600:#475569;--gray-800:#1e293b;
+--gradient-hero:linear-gradient(135deg,#0a1628 0%,#1e3a5f 50%,#0a1628 100%);
+--gradient-card:linear-gradient(135deg,rgba(6,182,212,0.1),rgba(132,204,22,0.1));
+--gradient-cta:linear-gradient(135deg,#84cc16,#06b6d4);
+--shadow-sm:0 1px 3px rgba(0,0,0,0.1);
+--shadow-md:0 4px 20px rgba(0,0,0,0.15);
+--shadow-lg:0 10px 40px rgba(0,0,0,0.2);
+--shadow-glow:0 0 30px rgba(6,182,212,0.2);
+--radius:12px;--radius-lg:20px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--white);background:var(--navy);line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:all .3s ease;background:transparent}
+nav.scrolled{background:rgba(10,22,40,0.95);backdrop-filter:blur(20px);padding:10px 0;box-shadow:0 2px 20px rgba(0,0,0,0.3)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-size:1.5rem;font-weight:800;color:var(--white)}
+.nav-logo span{color:var(--lime)}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-size:.9rem;font-weight:500;color:var(--gray-300);transition:color .3s}
+.nav-links a:hover{color:var(--lime)}
+.nav-cta{background:var(--gradient-cta);color:var(--navy);padding:10px 24px;border-radius:50px;font-weight:700;font-size:.85rem;transition:transform .2s,box-shadow .2s}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:var(--shadow-glow)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.hamburger span{width:24px;height:2px;background:var(--white);transition:all .3s}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,22,40,0.98);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:32px}
+.mobile-menu.active{display:flex}
+.mobile-menu a{font-size:1.3rem;font-weight:600;color:var(--white)}
+.mobile-close{position:absolute;top:20px;right:24px;font-size:2rem;color:var(--white);cursor:pointer}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 0 80px}
+.hero::before{content:'';position:absolute;inset:0;background:var(--gradient-hero)}
+.hero-grid{position:absolute;inset:0;background-image:radial-gradient(rgba(6,182,212,0.15) 1px,transparent 1px);background-size:40px 40px;animation:gridMove 20s linear infinite}
+@keyframes gridMove{0%{transform:translate(0,0)}100%{transform:translate(40px,40px)}}
+.hero-glow{position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(120px);opacity:.15}
+.hero-glow-1{background:var(--cyan);top:-200px;right:-100px}
+.hero-glow-2{background:var(--lime);bottom:-200px;left:-100px}
+.hero-content{position:relative;z-index:2;max-width:800px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(132,204,22,0.15);border:1px solid rgba(132,204,22,0.3);padding:8px 20px;border-radius:50px;font-size:.85rem;font-weight:600;color:var(--lime);margin-bottom:24px}
+.hero h1{font-size:clamp(2.5rem,6vw,4rem);font-weight:900;line-height:1.1;margin-bottom:24px}
+.hero h1 .highlight{background:var(--gradient-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:1.2rem;color:var(--gray-300);max-width:600px;margin-bottom:40px;line-height:1.7}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{background:var(--gradient-cta);color:var(--navy);padding:16px 32px;border-radius:50px;font-weight:700;font-size:1rem;transition:all .3s;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(132,204,22,0.3)}
+.btn-outline{background:transparent;color:var(--white);padding:16px 32px;border-radius:50px;font-weight:700;font-size:1rem;border:2px solid var(--gray-400);transition:all .3s;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn-outline:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-3px)}
+.trust-bar{margin-top:60px;padding-top:40px;border-top:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;gap:40px;flex-wrap:wrap}
+.trust-stat{text-align:center}
+.trust-stat .num{font-size:2rem;font-weight:800;color:var(--lime)}
+.trust-stat .label{font-size:.8rem;color:var(--gray-400);margin-top:4px}
+
+/* SECTIONS */
+section{padding:100px 0}
+.section-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(132,204,22,0.1);border:1px solid rgba(132,204,22,0.2);padding:6px 16px;border-radius:50px;font-size:.8rem;font-weight:600;color:var(--lime);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
+.section-title{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:16px;line-height:1.2}
+.section-title .highlight{color:var(--lime)}
+.section-subtitle{font-size:1.1rem;color:var(--gray-400);max-width:600px;margin-bottom:48px}
+.text-center{text-align:center}
+.text-center .section-subtitle{margin-left:auto;margin-right:auto}
+
+/* WHO WE HELP */
+.who-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px}
+.who-card{background:var(--navy-light);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-lg);padding:40px;transition:all .4s;position:relative;overflow:hidden}
+.who-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient-cta);transform:scaleX(0);transition:transform .4s;transform-origin:left}
+.who-card:hover{transform:translateY(-8px);border-color:rgba(6,182,212,0.3);box-shadow:var(--shadow-glow)}
+.who-card:hover::before{transform:scaleX(1)}
+.who-icon{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:20px}
+.who-icon.business{background:rgba(6,182,212,0.15)}
+.who-icon.school{background:rgba(132,204,22,0.15)}
+.who-icon.individual{background:rgba(168,85,247,0.15)}
+.who-card h3{font-size:1.4rem;font-weight:700;margin-bottom:12px}
+.who-card p{color:var(--gray-400);line-height:1.7}
+
+/* PRICING CARDS */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin-top:40px}
+.price-card{background:var(--navy-light);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-lg);padding:36px;transition:all .4s;position:relative;display:flex;flex-direction:column}
+.price-card.featured{border-color:var(--cyan);box-shadow:0 0 40px rgba(6,182,212,0.15)}
+.price-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.popular-badge{position:absolute;top:-1px;right:24px;background:var(--gradient-cta);color:var(--navy);padding:6px 16px;border-radius:0 0 8px 8px;font-size:.75rem;font-weight:700;text-transform:uppercase}
+.price-card .icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:16px}
+.price-amount{font-size:2.5rem;font-weight:900;margin-bottom:4px}
+.price-amount .currency{font-size:1.5rem;vertical-align:super}
+.price-amount .period{font-size:1rem;font-weight:400;color:var(--gray-400)}
+.price-card .name{font-size:1.1rem;font-weight:600;color:var(--lime);margin-bottom:12px}
+.price-card .desc{color:var(--gray-400);font-size:.95rem;margin-bottom:24px;line-height:1.6}
+.feature-list{list-style:none;margin-bottom:32px;flex-grow:1}
+.feature-list li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:var(--gray-300);font-size:.9rem;display:flex;align-items:flex-start;gap:10px}
+.feature-list li::before{content:'\2713';color:var(--lime);font-weight:700;flex-shrink:0}
+.card-btn{display:block;text-align:center;padding:14px;border-radius:50px;font-weight:700;font-size:.95rem;transition:all .3s;cursor:pointer;border:none;width:100%}
+.card-btn.primary{background:var(--gradient-cta);color:var(--navy)}
+.card-btn.primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(132,204,22,0.3)}
+.card-btn.outline{background:transparent;color:var(--white);border:2px solid var(--gray-400)}
+.card-btn.outline:hover{border-color:var(--cyan);color:var(--cyan)}
+
+/* SCHOOLS SECTION */
+.schools-bg{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-light) 50%,var(--navy) 100%)}
+.workshop-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-top:40px}
+.workshop-card{background:var(--navy);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-lg);overflow:hidden;transition:all .4s}
+.workshop-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:rgba(132,204,22,0.3)}
+.workshop-header{background:linear-gradient(135deg,var(--blue),var(--cyan));padding:24px;text-align:center;font-size:2rem}
+.workshop-body{padding:28px}
+.workshop-body h3{font-size:1.2rem;font-weight:700;margin-bottom:8px}
+.workshop-body .desc{color:var(--gray-400);font-size:.9rem;margin-bottom:16px}
+.workshop-price{display:flex;align-items:baseline;gap:8px;margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08)}
+.workshop-price .amount{font-size:1.5rem;font-weight:800;color:var(--lime)}
+.workshop-price .detail{font-size:.8rem;color:var(--gray-400)}
+
+/* FREE TOOLS */
+.tools-section{background:linear-gradient(135deg,#0f2035 0%,#0a1628 50%,#1a1a3e 100%);position:relative;overflow:hidden}
+.tools-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(6,182,212,0.08),transparent 70%)}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:32px;margin-top:40px;position:relative;z-index:2}
+.tool-card{background:rgba(255,255,255,0.03);border:2px solid rgba(6,182,212,0.2);border-radius:var(--radius-lg);padding:40px;text-align:center;transition:all .4s}
+.tool-card:hover{border-color:var(--lime);box-shadow:0 0 50px rgba(132,204,22,0.1);transform:translateY(-6px)}
+.tool-card .free-badge{display:inline-block;background:var(--lime);color:var(--navy);padding:4px 16px;border-radius:50px;font-size:.8rem;font-weight:800;margin-bottom:16px}
+.tool-card h3{font-size:1.5rem;font-weight:700;margin-bottom:12px}
+.tool-card p{color:var(--gray-400);margin-bottom:24px;line-height:1.7}
+
+/* RESOURCES */
+.resources-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:40px}
+.resource-card{background:var(--navy-light);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:28px;transition:all .3s;text-align:center}
+.resource-card:hover{transform:translateY(-4px);border-color:rgba(132,204,22,0.3);box-shadow:var(--shadow-md)}
+.resource-icon{font-size:2.5rem;margin-bottom:16px}
+.resource-card h3{font-size:1.1rem;font-weight:700;margin-bottom:8px}
+.resource-card p{color:var(--gray-400);font-size:.85rem;margin-bottom:16px;line-height:1.6}
+.resource-price{color:var(--lime);font-weight:700;font-size:1.1rem;margin-bottom:16px}
+.resource-btn{display:inline-block;padding:10px 24px;border-radius:50px;font-size:.85rem;font-weight:600;transition:all .3s}
+.resource-btn.paid{background:var(--gradient-cta);color:var(--navy)}
+.resource-btn.free{background:transparent;border:2px solid var(--lime);color:var(--lime)}
+.resource-btn:hover{transform:translateY(-2px)}
+
+/* TRUST / WHY */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:28px;margin-top:40px}
+.why-card{text-align:center;padding:32px}
+.why-card .icon{font-size:2.5rem;margin-bottom:16px}
+.why-card h3{font-size:1.1rem;font-weight:700;margin-bottom:8px}
+.why-card p{color:var(--gray-400);font-size:.9rem}
+
+/* TESTIMONIAL */
+.testimonial{background:var(--navy-light);border-left:4px solid var(--lime);border-radius:0 var(--radius) var(--radius) 0;padding:40px;margin-top:48px;max-width:800px;margin-left:auto;margin-right:auto}
+.testimonial p{font-size:1.1rem;font-style:italic;color:var(--gray-300);line-height:1.8;margin-bottom:16px}
+.testimonial .author{color:var(--lime);font-weight:700;font-style:normal}
+
+/* FAQ */
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(255,255,255,0.08);padding:20px 0}
+.faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:1.05rem;transition:color .3s}
+.faq-q:hover{color:var(--lime)}
+.faq-q .arrow{transition:transform .3s;font-size:1.2rem}
+.faq-q.active .arrow{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;color:var(--gray-400);line-height:1.7}
+.faq-a.open{max-height:300px;padding-top:12px}
+
+/* CONTACT */
+.contact-section{background:linear-gradient(180deg,var(--navy),var(--navy-light))}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:40px}
+.contact-info p{color:var(--gray-400);line-height:1.8;margin-bottom:24px;font-size:1.05rem}
+.contact-detail{display:flex;align-items:center;gap:12px;margin-bottom:16px;color:var(--gray-300)}
+.contact-detail .icon{color:var(--lime);font-size:1.2rem}
+.contact-form{display:flex;flex-direction:column;gap:16px}
+.form-group label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:var(--gray-300)}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 18px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius);color:var(--white);font-size:.95rem;font-family:inherit;transition:border-color .3s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--cyan)}
+.form-group textarea{min-height:120px;resize:vertical}
+.form-group select option{background:var(--navy);color:var(--white)}
+
+/* FOOTER */
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.08);padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand p{color:var(--gray-400);margin-top:12px;font-size:.9rem;line-height:1.6}
+.footer-col h4{font-size:.85rem;text-transform:uppercase;letter-spacing:1px;color:var(--gray-400);margin-bottom:16px}
+.footer-col a{display:block;color:var(--gray-300);padding:4px 0;font-size:.9rem;transition:color .3s}
+.footer-col a:hover{color:var(--lime)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;color:var(--gray-400);font-size:.8rem;flex-wrap:wrap;gap:12px}
+
+/* FLOATING CTA (mobile) */
+.floating-cta{display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:900;background:var(--gradient-cta);color:var(--navy);padding:14px 32px;border-radius:50px;font-weight:700;box-shadow:var(--shadow-lg);font-size:.9rem}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(30px);transition:all .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+.nav-links{display:none}
+.hamburger{display:flex}
+.contact-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr 1fr}
+.trust-bar{flex-direction:column;gap:20px}
+.hero h1{font-size:2.2rem}
+.pricing-grid{grid-template-columns:1fr}
+.floating-cta{display:block}
+}
+@media(max-width:600px){
+.footer-grid{grid-template-columns:1fr}
+.who-grid{grid-template-columns:1fr}
+.tools-grid{grid-template-columns:1fr}
+section{padding:60px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+<div class="container nav-inner">
+<a href="#" class="nav-logo">AI <span>Guy</span></a>
+<div class="nav-links">
+<a href="#services">Services</a>
+<a href="#schools">For Schools</a>
+<a href="#tools">Free Tools</a>
+<a href="#resources">Resources</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact" class="nav-cta">Book Free Call</a>
+</div>
+<div class="hamburger" onclick="toggleMenu()">
+<span></span><span></span><span></span>
+</div>
+</div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+<span class="mobile-close" onclick="toggleMenu()">&times;</span>
+<a href="#services" onclick="toggleMenu()">Services</a>
+<a href="#schools" onclick="toggleMenu()">For Schools</a>
+<a href="#tools" onclick="toggleMenu()">Free Tools</a>
+<a href="#resources" onclick="toggleMenu()">Resources</a>
+<a href="#pricing" onclick="toggleMenu()">Pricing</a>
+<a href="#contact" onclick="toggleMenu()">Contact</a>
+<a href="#contact" class="btn-primary" onclick="toggleMenu()">Book Free Call</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-grid"></div>
+<div class="hero-glow hero-glow-1"></div>
+<div class="hero-glow hero-glow-2"></div>
+<div class="container hero-content">
+<div class="hero-badge">&#9889; Sheffield's Practical AI Partner</div>
+<h1>Make AI Work For Your Business.<br><span class="highlight">Not the Other Way Around.</span></h1>
+<p>Practical AI training and strategy for Sheffield businesses and schools. No jargon. No hype. Just real tools, real skills, and real results from day one.</p>
+<div class="hero-buttons">
+<a href="#tools" class="btn-primary">&#9889; Take the Free AI Audit</a>
+<a href="#contact" class="btn-outline">&#128222; Book a Free Call</a>
+</div>
+<div class="trust-bar">
+<div class="trust-stat"><div class="num">87%</div><div class="label">of employers now expect<br>AI literacy from candidates</div></div>
+<div class="trust-stat"><div class="num">5hrs+</div><div class="label">average time saved<br>per employee per week</div></div>
+<div class="trust-stat"><div class="num">100%</div><div class="label">practical, hands-on<br>no theory lectures</div></div>
+</div>
+</div>
+</section>
+
+<!-- WHO WE HELP -->
+<section id="services">
+<div class="container">
+<div class="text-center">
+<span class="section-badge">Who We Help</span>
+<h2 class="section-title">AI Training & Strategy<br><span class="highlight">Built Around You</span></h2>
+<p class="section-subtitle">Whether you're a business ready to work smarter, a school investing in your people, or an individual looking to get ahead.</p>
+</div>
+<div class="who-grid">
+<div class="who-card fade-in">
+<div class="who-icon business">&#127970;</div>
+<h3>For Businesses</h3>
+<p>Cut through the AI noise. We show your team exactly which tools save time and money, with hands-on training they can use from day one. From half-day kickstarts to full agency retainers.</p>
+<a href="#pricing" style="display:inline-block;margin-top:16px;color:var(--cyan);font-weight:600;font-size:.9rem">View business packages &rarr;</a>
+</div>
+<div class="who-card fade-in">
+<div class="who-icon school">&#127979;</div>
+<h3>For Schools</h3>
+<p>Practical AI training for teachers, leaders, and students with safeguarding built in. CPD workshops, student sessions, parent evenings, and ready-to-use teaching resources.</p>
+<a href="#schools" style="display:inline-block;margin-top:16px;color:var(--cyan);font-weight:600;font-size:.9rem">View school workshops &rarr;</a>
+</div>
+<div class="who-card fade-in">
+<div class="who-icon individual">&#128100;</div>
+<h3>For Individuals</h3>
+<p>1:1 coaching tailored to your role, your tools, and your goals. No generic slides. Learn the AI skills that actually matter for YOUR job and start saving hours every week.</p>
+<a href="#coaching" style="display:inline-block;margin-top:16px;color:var(--cyan);font-weight:600;font-size:.9rem">View 1:1 coaching &rarr;</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- BUSINESS PRICING -->
+<section id="pricing" style="background:linear-gradient(180deg,var(--navy),var(--navy-light),var(--navy))">
+<div class="container">
+<div class="text-center">
+<span class="section-badge">For Businesses</span>
+<h2 class="section-title">Practical AI Solutions<br><span class="highlight">That Pay for Themselves</span></h2>
+<p class="section-subtitle">Start with a workshop, scale into ongoing support, or let us handle it all. Every package includes real, measurable outcomes.</p>
+</div>
+<div class="pricing-grid">
+
+<div class="price-card fade-in">
+<div class="icon" style="background:rgba(6,182,212,0.15)">&#127891;</div>
+<div class="price-amount">&pound;99<span class="period"> / session</span></div>
+<div class="name">1:1 AI Coaching</div>
+<div class="desc">Bespoke coaching tailored to your role, your tools, your goals. No generic slides, no wasted time.</div>
+<ul class="feature-list">
+<li>Fully bespoke to your job and workflow</li>
+<li>Learn AI tools relevant to you</li>
+<li>Save hours every week from session one</li>
+<li>Follow-up resources and prompt library</li>
+<li>Ongoing support between sessions</li>
+<li>Remote or in-person &mdash; your choice</li>
+</ul>
+<a href="#contact" class="card-btn outline">Book a Session</a>
+</div>
+
+<div class="price-card fade-in">
+<div class="icon" style="background:rgba(132,204,22,0.15)">&#128188;</div>
+<div class="price-amount">&pound;599<span class="period"> one-off</span></div>
+<div class="name">AI Kickstart</div>
+<div class="desc">A structured half-day programme that gets your whole team using AI effectively &mdash; not just talking about it.</div>
+<ul class="feature-list">
+<li>Half-day team training session</li>
+<li>AI audit of your current workflows</li>
+<li>Identify your top 5 quick wins</li>
+<li>Hands-on tool training (not theory)</li>
+<li>Custom prompt library for your business</li>
+<li>30-day follow-up email support</li>
+</ul>
+<a href="#contact" class="card-btn primary">Get Started</a>
+</div>
+
+<div class="price-card featured fade-in">
+<span class="popular-badge">Most Popular</span>
+<div class="icon" style="background:rgba(6,182,212,0.15)">&#128640;</div>
+<div class="price-amount">&pound;997<span class="period"> / month</span></div>
+<div class="name">AI Agency Retainer</div>
+<div class="desc">Your AI department, without the headcount. Strategic support, creative output, and ongoing optimisation every month.</div>
+<ul class="feature-list">
+<li>Unlimited AI productivity audits</li>
+<li>Marketing plans and campaign strategy</li>
+<li>AI-generated designs and creative assets</li>
+<li>Monthly competitor analysis reports</li>
+<li>Ongoing tool optimisation and training</li>
+<li>Priority access and dedicated support</li>
+<li>Monthly strategy call included</li>
+</ul>
+<a href="#contact" class="card-btn primary">Book a Discovery Call</a>
+</div>
+
+<div class="price-card fade-in">
+<div class="icon" style="background:rgba(168,85,247,0.15)">&#10067;</div>
+<div class="price-amount" style="font-size:2rem">Free<span class="period"> strategy call</span></div>
+<div class="name">Not Sure Where to Start?</div>
+<div class="desc">Book a free 15-minute call and we'll tell you honestly which option &mdash; if any &mdash; is right for you. No pressure, no pitch.</div>
+<ul class="feature-list">
+<li>Understand your current AI readiness</li>
+<li>Identify your biggest opportunities</li>
+<li>Get a clear, honest recommendation</li>
+<li>Walk away with value regardless</li>
+<li>No obligation to book anything</li>
+<li>30-minute option available if needed</li>
+</ul>
+<a href="#contact" class="card-btn outline">Book Free Call</a>
+</div>
+
+</div>
+
+<div style="text-align:center;margin-top:48px;padding:32px;background:rgba(255,255,255,0.03);border-radius:var(--radius-lg);border:1px solid rgba(255,255,255,0.08)">
+<h3 style="font-size:1.3rem;margin-bottom:8px">Need something bigger?</h3>
+<p style="color:var(--gray-400);margin-bottom:16px">Our <strong>AI Discovery Workshop</strong> (&pound;1,800&ndash;&pound;3,000) and <strong>Digital Transformation Programme</strong> (&pound;4,000&ndash;&pound;8,000) are designed for larger organisations ready for full-scale AI strategy.</p>
+<a href="#contact" class="btn-outline" style="padding:12px 28px;font-size:.9rem">Enquire About Enterprise Packages</a>
+</div>
+</div>
+</section>
+
+<!-- SCHOOLS SECTION -->
+<section id="schools" class="schools-bg">
+<div class="container">
+<div class="text-center">
+<span class="section-badge">For Education</span>
+<h2 class="section-title">AI for <span class="highlight">Schools &amp; Parents</span></h2>
+<p class="section-subtitle">Helping schools, teachers, and parents get comfortable with AI &mdash; quickly, safely, and without the jargon.</p>
+</div>
+<div class="workshop-cards">
+
+<div class="workshop-card fade-in">
+<div class="workshop-header">&#128737;&#65039;</div>
+<div class="workshop-body">
+<h3>Safe AI Foundations</h3>
+<div class="desc">A half-day session for teachers and leadership teams who need clear, practical AI guidelines for their school.</div>
+<ul class="feature-list">
+<li>Understanding AI capabilities and limitations</li>
+<li>Safe usage policies and frameworks</li>
+<li>Data protection and privacy considerations</li>
+<li>Real classroom examples and case studies</li>
+<li>Practical policy templates to take away</li>
+</ul>
+<div class="workshop-price"><span class="amount">&pound;350&ndash;&pound;600</span><span class="detail">Half-day | Up to 30 participants</span></div>
+</div>
+</div>
+
+<div class="workshop-card fade-in">
+<div class="workshop-header" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">&#9997;&#65039;</div>
+<div class="workshop-body">
+<h3>Teacher Prompt Training</h3>
+<div class="desc">Hands-on training for teachers who want to use AI to reduce workload, create better resources, and improve lesson planning.</div>
+<ul class="feature-list">
+<li>Writing effective prompts for lesson planning</li>
+<li>Creating differentiated resources quickly</li>
+<li>Marking support and feedback generation</li>
+<li>Communication templates (emails, reports, letters)</li>
+<li>Custom prompt library for your school</li>
+</ul>
+<div class="workshop-price"><span class="amount">&pound;400&ndash;&pound;650</span><span class="detail">Half-day | Practical, hands-on</span></div>
+</div>
+</div>
+
+<div class="workshop-card fade-in">
+<div class="workshop-header" style="background:linear-gradient(135deg,#ef4444,#8b5cf6)">&#127919;</div>
+<div class="workshop-body">
+<h3>Student AI Literacy</h3>
+<div class="desc">Age-appropriate sessions that teach students how to use AI responsibly, critically, and creatively.</div>
+<ul class="feature-list">
+<li>Critical thinking about AI outputs</li>
+<li>Ethical considerations and bias awareness</li>
+<li>Practical skills for research and learning</li>
+<li>Understanding when NOT to use AI</li>
+<li>Future skills and career applications</li>
+</ul>
+<div class="workshop-price"><span class="amount">&pound;300&ndash;&pound;550</span><span class="detail">Per session | KS2&ndash;KS5 options</span></div>
+</div>
+</div>
+
+<div class="workshop-card fade-in">
+<div class="workshop-header" style="background:linear-gradient(135deg,#8b5cf6,#06b6d4)">&#128106;</div>
+<div class="workshop-body">
+<h3>Parent AI Awareness</h3>
+<div class="desc">An evening or weekend session for parents covering what tools children are using, online safety, and supporting learning at home.</div>
+<ul class="feature-list">
+<li>What tools children are using</li>
+<li>Online safety and AI risks</li>
+<li>How to support learning at home</li>
+<li>Q&amp;A session included</li>
+</ul>
+<div class="workshop-price"><span class="amount">&pound;450&ndash;&pound;750</span><span class="detail">Evening or weekend session</span></div>
+</div>
+</div>
+
+</div>
+
+<!-- WHY SCHOOLS TRUST US -->
+<div style="margin-top:60px">
+<div class="why-grid">
+<div class="why-card fade-in"><div class="icon">&#9989;</div><h3>Education Background</h3><p>We work in employability and understand the classroom</p></div>
+<div class="why-card fade-in"><div class="icon">&#128274;</div><h3>Safety First</h3><p>Data protection and safeguarding are non-negotiable</p></div>
+<div class="why-card fade-in"><div class="icon">&#127919;</div><h3>Practical Focus</h3><p>No jargon, no theory &mdash; just what actually works</p></div>
+</div>
+</div>
+
+<!-- TESTIMONIAL -->
+<div class="testimonial fade-in">
+<p>&ldquo;Dean's workshop transformed how our staff think about AI. We went from fear and confusion to having clear policies and practical tools. Our teachers are now saving hours every week, and they feel confident guiding students.&rdquo;</p>
+<div class="author">&mdash; Emma Richardson, Deputy Head, St. Mary's Academy</div>
+</div>
+
+</div>
+</section>
+
+<!-- FREE TOOLS -->
+<section id="tools" class="tools-section">
+<div class="container">
+<div class="text-center">
+<span class="section-badge">Free Tools</span>
+<h2 class="section-title">AI Audit &amp; <span class="highlight">Risk Assessment</span></h2>
+<p class="section-subtitle">Not sure where to start? Use our free tools to quickly find out where AI can help you and where to be careful.</p>
+</div>
+<div class="tools-grid">
+
+<div class="tool-card fade-in">
+<div class="free-badge">FREE</div>
+<h3>AI Audit Tool</h3>
+<p>Answer a short set of questions about your business or school and get an instant breakdown of where AI can save you time, reduce costs, and improve output. Takes under five minutes.</p>
+<ul class="feature-list" style="text-align:left;margin-top:20px">
+<li>Instant results, no sign-up needed</li>
+<li>Identifies your highest-value opportunities</li>
+<li>Tailored to your organisation type</li>
+<li>Optional written report available</li>
+</ul>
+<a href="https://www.aiguysolutions.co.uk/" class="btn-primary" target="_blank" style="margin-top:16px">Take the Free Audit</a>
+</div>
+
+<div class="tool-card fade-in">
+<div class="free-badge">FREE</div>
+<h3>AI Risk Assessment</h3>
+<p>Understand the risks before you commit to any AI tools. Covers data privacy, bias, compliance, and operational risk so you can adopt AI safely and responsibly from day one.</p>
+<ul class="feature-list" style="text-align:left;margin-top:20px">
+<li>Covers GDPR and data privacy risks</li>
+<li>Identifies bias and fairness concerns</li>
+<li>Operational and reputational risk flags</li>
+<li>Optional formal written assessment</li>
+</ul>
+<a href="https://www.aiguysolutions.co.uk/" class="btn-primary" target="_blank" style="margin-top:16px">Start Risk Assessment</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- RESOURCES & DOWNLOADS -->
+<section id="resources">
+<div class="container">
+<div class="text-center">
+<span class="section-badge">Resources</span>
+<h2 class="section-title">Guides, Templates &amp; <span class="highlight">Teaching Packs</span></h2>
+<p class="section-subtitle">Practical resources you can download and use straight away. Created by educators, for educators and professionals.</p>
+</div>
+<div class="resources-grid">
+
+<div class="resource-card fade-in">
+<div class="resource-icon">&#128218;</div>
+<h3>Mastering AI Tools</h3>
+<p>A comprehensive printable guide to the AI tools that actually matter. Practical walkthroughs and real-world applications.</p>
+<div class="resource-price">Paid Resource</div>
+<a href="https://payhip.com/b/871yT" target="_blank" class="resource-btn paid">Get the Guide</a>
+</div>
+
+<div class="resource-card fade-in">
+<div class="resource-icon">&#128161;</div>
+<h3>AI Prompt Cheat Sheet</h3>
+<p>A free, ready-to-use cheat sheet with proven prompts for common tasks. Perfect for beginners and professionals alike.</p>
+<div class="resource-price" style="color:var(--cyan)">Free Download</div>
+<a href="https://payhip.com/b/Knv0O" target="_blank" class="resource-btn free">Download Free</a>
+</div>
+
+<div class="resource-card fade-in">
+<div class="resource-icon">&#127979;</div>
+<h3>AI for Teachers</h3>
+<p>Everything teachers need to start using AI confidently in the classroom. Lesson planning, marking, resources, and more.</p>
+<div class="resource-price">Paid Resource</div>
+<a href="https://payhip.com/b/k4BD6" target="_blank" class="resource-btn paid">Get the Guide</a>
+</div>
+
+<div class="resource-card fade-in">
+<div class="resource-icon">&#128203;</div>
+<h3>School AI Curriculum Guide</h3>
+<p>A comprehensive guide on how AI fits into schools. Covers policy, curriculum integration, and practical implementation.</p>
+<div class="resource-price" style="color:var(--cyan)">Free on TES</div>
+<a href="https://www.tes.com/teaching-resource/school-curriculum-guide-on-how-ai-fits-into-schools-13441907" target="_blank" class="resource-btn free">Get on TES</a>
+</div>
+
+<div class="resource-card fade-in">
+<div class="resource-icon">&#128214;</div>
+<h3>No-Nonsense Guide to AI</h3>
+<p>A straight-talking guide for teachers who want to understand AI without the jargon. Practical, honest, and immediately useful.</p>
+<div class="resource-price" style="color:var(--cyan)">Free on TES</div>
+<a href="https://www.tes.com/teaching-resource/ai-for-teachers-a-no-nonsense-guide-13438697" target="_blank" class="resource-btn free">Get on TES</a>
+</div>
+
+<div class="resource-card fade-in">
+<div class="resource-icon">&#128230;</div>
+<h3>Teaching Pack Bundle</h3>
+<p>Ready-to-use lesson slides, student worksheets, and activity guides. Separate versions for ages 8&ndash;11 and 12&ndash;16.</p>
+<div class="resource-price">&pound;49 &ndash; &pound;149</div>
+<a href="#contact" class="resource-btn paid">Get the Pack</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--navy-light)">
+<div class="container">
+<div class="text-center">
+<span class="section-badge">FAQ</span>
+<h2 class="section-title">Common <span class="highlight">Questions</span></h2>
+</div>
+<div class="faq-list" style="margin-top:40px">
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">Do I need any technical knowledge?<span class="arrow">&#9660;</span></div>
+<div class="faq-a">Not at all. Every session is designed for non-technical people. We meet you where you are and build confidence with practical, hands-on exercises &mdash; not theory lectures.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">Can you come to our office or school?<span class="arrow">&#9660;</span></div>
+<div class="faq-a">Yes! All workshops and training sessions can be delivered on-site at your location in Sheffield and South Yorkshire. Remote options are also available for teams across the UK.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">What AI tools do you use and recommend?<span class="arrow">&#9660;</span></div>
+<div class="faq-a">We're completely tool-agnostic. We recommend what works best for your situation &mdash; whether that's ChatGPT, Claude, Copilot, Gemini, or specialised tools for your industry. We'll help you find the right fit.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">Is there support after training?<span class="arrow">&#9660;</span></div>
+<div class="faq-a">Yes. All packages include follow-up support. The AI Kickstart includes 30 days of email support. Retainer clients get ongoing, dedicated support. We don't just train and disappear.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">How do I know which service is right for me?<span class="arrow">&#9660;</span></div>
+<div class="faq-a">The easiest way is to book a free strategy call &mdash; 15 minutes, no obligation, no pitch. Or take our free AI Audit tool for an instant assessment of where AI can help most.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">Are your school workshops safeguarding compliant?<span class="arrow">&#9660;</span></div>
+<div class="faq-a">Absolutely. Safeguarding and data protection are non-negotiable. All school-facing work follows current DfE guidance and we hold an enhanced DBS check. We provide policy templates and frameworks as standard.</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+<div class="container">
+<div class="text-center">
+<span class="section-badge">Get In Touch</span>
+<h2 class="section-title">Let's Talk About <span class="highlight">Your AI Journey</span></h2>
+<p class="section-subtitle">Whether you're ready to book or just want to explore your options, we're here to help.</p>
+</div>
+<div class="contact-grid">
+<div class="contact-info">
+<p>At AI Guy Solutions, we believe in the power of artificial intelligence to transform businesses and enhance learning experiences. Whether your interest lies in our innovative services designed for schools or our bespoke offerings for businesses, we're ready to help.</p>
+<div class="contact-detail"><span class="icon">&#128205;</span> Sheffield, South Yorkshire</div>
+<div class="contact-detail"><span class="icon">&#128231;</span> hello@aiguysolutions.co.uk</div>
+<div class="contact-detail"><span class="icon">&#127760;</span> www.aiguysolutions.co.uk</div>
+<div style="margin-top:32px;padding:24px;background:rgba(132,204,22,0.1);border-radius:var(--radius);border:1px solid rgba(132,204,22,0.2)">
+<strong style="color:var(--lime)">&#128222; Prefer to talk?</strong>
+<p style="color:var(--gray-300);margin-top:8px;font-size:.9rem">Book a free 15-minute call. No pressure, no pitch &mdash; just honest advice about whether AI is right for you right now.</p>
+<a href="#" class="btn-primary" style="margin-top:12px;display:inline-block;font-size:.85rem;padding:12px 24px">Book Free Call</a>
+</div>
+</div>
+<div>
+<form class="contact-form" onsubmit="handleSubmit(event)">
+<div class="form-group">
+<label>Name *</label>
+<input type="text" required placeholder="Your name">
+</div>
+<div class="form-group">
+<label>Email *</label>
+<input type="email" required placeholder="your@email.com">
+</div>
+<div class="form-group">
+<label>I'm interested in...</label>
+<select>
+<option value="">Select an option</option>
+<option>Business AI Training</option>
+<option>School Workshop</option>
+<option>1:1 AI Coaching</option>
+<option>AI Agency Retainer</option>
+<option>Free Strategy Call</option>
+<option>Teaching Resources</option>
+<option>Something Else</option>
+</select>
+</div>
+<div class="form-group">
+<label>Message</label>
+<textarea placeholder="Tell us about your needs..."></textarea>
+</div>
+<button type="submit" class="btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:16px">Send Message</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="nav-logo" style="font-size:1.3rem">AI <span style="color:var(--lime)">Guy</span></div>
+<p>Sheffield's practical AI training and strategy partner for businesses and schools. No jargon. Just results.</p>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<a href="#pricing">1:1 Coaching</a>
+<a href="#pricing">AI Kickstart</a>
+<a href="#pricing">Agency Retainer</a>
+<a href="#contact">Free Strategy Call</a>
+</div>
+<div class="footer-col">
+<h4>For Schools</h4>
+<a href="#schools">Staff Workshops</a>
+<a href="#schools">Student Sessions</a>
+<a href="#schools">Parent Evenings</a>
+<a href="#resources">Teaching Packs</a>
+</div>
+<div class="footer-col">
+<h4>Resources</h4>
+<a href="#tools">Free AI Audit</a>
+<a href="#tools">Risk Assessment</a>
+<a href="https://payhip.com/b/Knv0O" target="_blank">Prompt Cheat Sheet</a>
+<a href="#resources">All Resources</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>&copy; 2024&ndash;2026 AI Guy Solutions. All rights reserved.</span>
+<span>Sheffield, South Yorkshire</span>
+</div>
+</div>
+</footer>
+
+<!-- FLOATING CTA (mobile) -->
+<a href="#contact" class="floating-cta">&#128222; Book Free Call</a>
+
+<!-- JAVASCRIPT -->
+<script>
+// Navbar scroll effect
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Mobile menu
+function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('active');
+}
+
+// FAQ accordion
+function toggleFaq(el) {
+    const answer = el.nextElementSibling;
+    const isOpen = answer.classList.contains('open');
+    document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('active'));
+    if (!isOpen) {
+        answer.classList.add('open');
+        el.classList.add('active');
+    }
+}
+
+// Fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Form handler
+function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = 'Message Sent!';
+    btn.style.background = 'var(--lime)';
+    setTimeout(() => {
+        btn.textContent = 'Send Message';
+        btn.style.background = '';
+        e.target.reset();
+    }, 3000);
+}
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
+</script>
+
+</body>
+</html>
