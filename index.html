@@ -33,7 +33,8 @@ img{max-width:100%;display:block}
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:all .3s ease;background:transparent}
 nav.scrolled{background:rgba(10,22,40,0.95);backdrop-filter:blur(20px);padding:10px 0;box-shadow:0 2px 20px rgba(0,0,0,0.3)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-size:1.5rem;font-weight:800;color:var(--white)}
+.nav-logo{display:flex;align-items:center;gap:10px;font-size:1.5rem;font-weight:800;color:var(--white)}
+.nav-logo img{height:40px;width:auto}
 .nav-logo span{color:var(--lime)}
 .nav-links{display:flex;gap:32px;align-items:center}
 .nav-links a{font-size:.9rem;font-weight:500;color:var(--gray-300);transition:color .3s}
@@ -71,7 +72,22 @@ nav.scrolled{background:rgba(10,22,40,0.95);backdrop-filter:blur(20px);padding:1
 .trust-stat .label{font-size:.8rem;color:var(--gray-400);margin-top:4px}
 
 /* SECTIONS */
-section{padding:100px 0}
+section{padding:120px 0}
+.light-section{background:var(--white);color:var(--gray-800)}
+.light-section .section-title{color:var(--navy)}
+.light-section .section-subtitle{color:var(--gray-600)}
+.light-section .who-card{background:var(--white);border-color:var(--gray-200);box-shadow:var(--shadow-sm)}
+.light-section .who-card:hover{box-shadow:var(--shadow-md);border-color:var(--cyan)}
+.light-section .who-card p{color:var(--gray-600)}
+.light-section .who-card h3{color:var(--navy)}
+.light-section .resource-card{background:var(--white);border-color:var(--gray-200);box-shadow:var(--shadow-sm)}
+.light-section .resource-card:hover{box-shadow:var(--shadow-md)}
+.light-section .resource-card p{color:var(--gray-600)}
+.light-section .resource-card h3{color:var(--navy)}
+.light-section .faq-item{border-color:var(--gray-200)}
+.light-section .faq-q{color:var(--navy)}
+.light-section .faq-a{color:var(--gray-600)}
+.section-spacer{height:80px}
 .section-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(132,204,22,0.1);border:1px solid rgba(132,204,22,0.2);padding:6px 16px;border-radius:50px;font-size:.8rem;font-weight:600;color:var(--lime);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
 .section-title{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:16px;line-height:1.2}
 .section-title .highlight{color:var(--lime)}
@@ -224,14 +240,14 @@ section{padding:60px 0}
 <!-- NAVIGATION -->
 <nav id="navbar">
 <div class="container nav-inner">
-<a href="#" class="nav-logo">AI <span>Guy</span></a>
+<a href="#" class="nav-logo"><img src="logo.png" alt="AI Guy Solutions"> AI <span>Guy</span></a>
 <div class="nav-links">
 <a href="#services">Services</a>
 <a href="#schools">For Schools</a>
 <a href="#tools">Free Tools</a>
 <a href="#resources">Resources</a>
 <a href="#pricing">Pricing</a>
-<a href="#contact" class="nav-cta">Book Free Call</a>
+<a href="https://calendly.com/dean-aiguy/intro-call" target="_blank" class="nav-cta">Book Free Call</a>
 </div>
 <div class="hamburger" onclick="toggleMenu()">
 <span></span><span></span><span></span>
@@ -247,7 +263,7 @@ section{padding:60px 0}
 <a href="#resources" onclick="toggleMenu()">Resources</a>
 <a href="#pricing" onclick="toggleMenu()">Pricing</a>
 <a href="#contact" onclick="toggleMenu()">Contact</a>
-<a href="#contact" class="btn-primary" onclick="toggleMenu()">Book Free Call</a>
+<a href="https://calendly.com/dean-aiguy/intro-call" target="_blank" class="btn-primary" onclick="toggleMenu()">Book Free Call</a>
 </div>
 
 <!-- HERO -->
@@ -256,12 +272,13 @@ section{padding:60px 0}
 <div class="hero-glow hero-glow-1"></div>
 <div class="hero-glow hero-glow-2"></div>
 <div class="container hero-content">
+<img src="logo.png" alt="AI Guy Solutions" style="height:80px;width:auto;margin-bottom:24px">
 <div class="hero-badge">&#9889; Sheffield's Practical AI Partner</div>
 <h1>Make AI Work For Your Business.<br><span class="highlight">Not the Other Way Around.</span></h1>
 <p>Practical AI training and strategy for Sheffield businesses and schools. No jargon. No hype. Just real tools, real skills, and real results from day one.</p>
 <div class="hero-buttons">
 <a href="#tools" class="btn-primary">&#9889; Take the Free AI Audit</a>
-<a href="#contact" class="btn-outline">&#128222; Book a Free Call</a>
+<a href="https://calendly.com/dean-aiguy/intro-call" target="_blank" class="btn-outline">&#128222; Book a Free Call</a>
 </div>
 <div class="trust-bar">
 <div class="trust-stat"><div class="num">87%</div><div class="label">of employers now expect<br>AI literacy from candidates</div></div>
@@ -272,7 +289,7 @@ section{padding:60px 0}
 </section>
 
 <!-- WHO WE HELP -->
-<section id="services">
+<section id="services" class="light-section">
 <div class="container">
 <div class="text-center">
 <span class="section-badge">Who We Help</span>
@@ -359,7 +376,7 @@ section{padding:60px 0}
 <li>Priority access and dedicated support</li>
 <li>Monthly strategy call included</li>
 </ul>
-<a href="#contact" class="card-btn primary">Book a Discovery Call</a>
+<a href="https://calendly.com/dean-aiguy/intro-call" target="_blank" class="card-btn primary">Book a Discovery Call</a>
 </div>
 
 <div class="price-card fade-in">
@@ -375,7 +392,7 @@ section{padding:60px 0}
 <li>No obligation to book anything</li>
 <li>30-minute option available if needed</li>
 </ul>
-<a href="#contact" class="card-btn outline">Book Free Call</a>
+<a href="https://calendly.com/dean-aiguy/intro-call" target="_blank" class="card-btn outline">Book Free Call</a>
 </div>
 
 </div>
@@ -522,7 +539,7 @@ section{padding:60px 0}
 </section>
 
 <!-- RESOURCES & DOWNLOADS -->
-<section id="resources">
+<section id="resources" class="light-section">
 <div class="container">
 <div class="text-center">
 <span class="section-badge">Resources</span>
@@ -584,7 +601,7 @@ section{padding:60px 0}
 </section>
 
 <!-- FAQ -->
-<section style="background:var(--navy-light)">
+<section class="light-section">
 <div class="container">
 <div class="text-center">
 <span class="section-badge">FAQ</span>
@@ -643,7 +660,7 @@ section{padding:60px 0}
 <div style="margin-top:32px;padding:24px;background:rgba(132,204,22,0.1);border-radius:var(--radius);border:1px solid rgba(132,204,22,0.2)">
 <strong style="color:var(--lime)">&#128222; Prefer to talk?</strong>
 <p style="color:var(--gray-300);margin-top:8px;font-size:.9rem">Book a free 15-minute call. No pressure, no pitch &mdash; just honest advice about whether AI is right for you right now.</p>
-<a href="#" class="btn-primary" style="margin-top:12px;display:inline-block;font-size:.85rem;padding:12px 24px">Book Free Call</a>
+<a href="https://calendly.com/dean-aiguy/intro-call" target="_blank" class="btn-primary" style="margin-top:12px;display:inline-block;font-size:.85rem;padding:12px 24px">Book Free Call</a>
 </div>
 </div>
 <div>
@@ -685,7 +702,7 @@ section{padding:60px 0}
 <div class="container">
 <div class="footer-grid">
 <div class="footer-brand">
-<div class="nav-logo" style="font-size:1.3rem">AI <span style="color:var(--lime)">Guy</span></div>
+<div class="nav-logo" style="font-size:1.3rem"><img src="logo.png" alt="AI Guy" style="height:36px"> AI <span style="color:var(--lime)">Guy</span></div>
 <p>Sheffield's practical AI training and strategy partner for businesses and schools. No jargon. Just results.</p>
 </div>
 <div class="footer-col">
@@ -718,7 +735,7 @@ section{padding:60px 0}
 </footer>
 
 <!-- FLOATING CTA (mobile) -->
-<a href="#contact" class="floating-cta">&#128222; Book Free Call</a>
+<a href="https://calendly.com/dean-aiguy/intro-call" target="_blank" class="floating-cta">&#128222; Book Free Call</a>
 
 <!-- JAVASCRIPT -->
 <script>
